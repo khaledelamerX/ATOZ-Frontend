@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common'; // ✅ Import CommonModule for *ngIf
 import { SidebarService } from '../services/sidebar.service';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule], // ✅ Include CommonModule here
   template: `
     <header class="bg-white shadow-sm animate-fade-down" dir="rtl" style="position:sticky;top:0;z-index:40">
       <div class="container-max flex items-center justify-between py-4">
@@ -61,7 +62,7 @@ export class HeaderComponent {
 
   constructor(private sidebar: SidebarService) {}
 
-  toggleTheme(){
+  toggleTheme() {
     const el = document.documentElement as HTMLElement;
     const current = el.getAttribute('data-theme');
     if(current === 'dark'){
