@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://khaledelamerX.github.io/ATOZ-Frontend',
+  basePath: '/ATOZ-Frontend',
   supportedLocales: {
   "en-US": ""
 },
