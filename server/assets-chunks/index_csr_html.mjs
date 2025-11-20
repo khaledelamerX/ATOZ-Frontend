@@ -10,6 +10,6 @@ export default `<!doctype html>
 <body ngcm="">
   <app-root></app-root>
   <script src="/assets/scroll-reveal.js"></script>
-<script src="main-JMWQP3L5.js" type="module"></script></body>
+<script src="main-RQXQRD4U.js" type="module"></script></body>
 </html>
 `;
