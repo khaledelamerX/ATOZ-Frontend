@@ -1,0 +1,55 @@
+@use './styles/variables' as *;
+@use './styles/mixins' as *;
+
+/* Tailwind directives (processed by PostCSS). Keep these so Tailwind builds when installed. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import the generated Tailwind fallback so the app still has utilities without Tailwind CLI. */
+@import 'generated-tailwind.css';
+
+/* Global base styles */
+html, body {
+  font-family: $font-stack;
+  background: $bg;
+  color: #0f172a;
+}
+
+/* Smooth scrolling for anchor links */
+html { scroll-behavior: smooth; }
+
+a { text-decoration: none; }
+
+/* Utility: primary button using variables */
+.btn-primary {
+  background: $primary;
+  color: #fff;
+  border-radius: $radius-md;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Dark theme support re-used from generated-tailwind.css */
+[data-theme="dark"] {
+  body { background: #0b1220; color: #cbd5e1; }
+}
+/* Custom animations and utility helpers (kept as plain CSS so Tailwind plugin is optional) */
+.animate-fade-up { animation: fadeUp 600ms cubic-bezier(.2,.9,.2,1) both; }
+.animate-pop { animation: pop 420ms cubic-bezier(.2,.9,.2,1) both; }
+
+@keyframes fadeUp {
+	from { opacity: 0; transform: translateY(10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+	0% { transform: scale(.98); opacity: 0; }
+	60% { transform: scale(1.02); opacity: 1; }
+	100% { transform: scale(1); }
+}
+
+/* Small layout helpers for the app shell */
+.container-max { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right:1rem }
+
